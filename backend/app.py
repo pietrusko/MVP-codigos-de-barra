@@ -1,5 +1,5 @@
-From flask import Flask, request, jsonify
-Import pandas as pd
+from flask import Flask, request, jsonify
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -15,8 +15,7 @@ def pscan_CodigoBarra():
     if columna_producto.empty:
         return jsonify({"Error": "Producto no encontrado"}), 404
     
-    respuesta = 
-    {
+    respuesta = {
         "Producto": columna_producto["Producto"].values[0],
         "inventario": int(columna_producto["Inventario"].values[0]),
         "Id": columna_producto["Id"].values[0],
